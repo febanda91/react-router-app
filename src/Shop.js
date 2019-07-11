@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import {Link} from 'react-router-dom'
 
 //useState holds the info that we will be pulling from the api 
 
@@ -28,8 +29,11 @@ function Shop() {
   return (
   <div>
       {items.map(item => {
-          return <h1 key={item.itemid}>{item.name}</h1>
-      })}
+          return(
+         <h1 key={item.itemid}>
+         <Link to={`/shop/${item.itemid}`}>{item.name}</Link>
+         </h1>)
+    })}
   </div>
   );
 }

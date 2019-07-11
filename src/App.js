@@ -3,6 +3,7 @@ import './App.css';
 import Shop from './Shop'
 import About from './About'
 import Nav from './Nav'
+import ItemDetail from './ItemDetail'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 //Router = gives you the ability to handle routing, wrap all your components that you want routing functionality with Router
@@ -23,7 +24,8 @@ function App() {
      <Switch>
      <Route path="/" exact component={home}/>
      <Route path="/about" component={About}/>
-     <Route path="/shop" component={Shop}/>
+     <Route path="/shop" exact component={Shop}/>
+     <Route path="/shop/:id" component={ItemDetail}/>
      </Switch>
    </div>
    </Router>
